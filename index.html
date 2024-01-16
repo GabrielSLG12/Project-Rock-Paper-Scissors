@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        function getComputerChoice(){
+            const elements = ["Rock", "Paper", "Scissors"];
+            const choise = elements[Math.floor(Math.random() * elements.length)];
+            console.log(choise);
+        }
+
+        function playRound(playerSelection, computerSelection){
+            
+
+        }
+        // Player's selection 
+        const playerSelection = "Paper";
+
+        // Computer's selection
+        const computerSelection = getComputerChoice();
+
+
+
+        playRound();
+        console.log(playRound(playerSelection, computerSelection));
+
+
+       
+   
+    </script>
+</body>
+</html>
