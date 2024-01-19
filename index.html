@@ -7,27 +7,42 @@
 </head>
 <body>
     <script>
+        // Player's selection
+        const playerPrompt = prompt("Choice Rock, Paper or Scissors!");
+        const playerSelection = playerPrompt.toUpperCase();
+        // playerSelection playerPrompt
+        // Computer's selection
+        const computerSelection = getComputerChoice();
         
 
+        // player score
+        let playerScore = 0;
+
+        //computer score
+        let computerScore = 0;
+
+
         function getComputerChoice(){
-            const elements = ["Rock", "Paper", "Scissors"];
+            const elements = ["ROCK", "PAPER", "SCISSORS"];
             const choice = elements[Math.floor(Math.random() * elements.length)];
             return choice;
         }
 
         function playRound(playerSelection, computerSelection){
             
-            if (playerSelection === "Rock" && computerSelection === "Paper"   ||
-                    playerSelection === "Scissors" && computerSelection === "Rock" ||
-                    playerSelection === "Paper" && computerSelection === "Scissors"){
-                return ("You lose! " + computerSelection + " beats " + playerSelection)
-            } else if(playerSelection === "Rock" && computerSelection === "Scissors" ||
-                    playerSelection === "Paper" && computerSelection === "Rock" ||
-                    playerSelection === "Scissors" && computerSelection === "Paper") {
-                return ("You win! " + playerSelection + " beats " +  computerSelection)
+            if (playerSelection === "ROCK" && computerSelection === "PAPER"   ||
+                    playerSelection === "SCISSORS" && computerSelection === "ROCK" ||
+                    playerSelection === "PAPER" && computerSelection === "SCISSORS"){
+                return ("You lose! " + computerSelection + " beats " + playerSelection + computerScore++)
+            } else if(playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
+                    playerSelection === "PAPER" && computerSelection === "ROCK" ||
+                    playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+                return ("You win! " + playerSelection + " beats " +  computerSelection + playerScore++)
             } else {
-                return (playerSelection + " it's draw " + computerSelection) ;
+                return (playerSelection + " it's draw " + computerSelection);
             }
+
+
 
         }
 
@@ -37,20 +52,24 @@
 
                 const computerSelection = getComputerChoice();
                 console.log(playRound(playerSelection, computerSelection));
-                console.log(game);
-                
+                console.log(playerScore);
+                console.log(computerScore);
+                console.log(playerPrompt);
+
             }
                 
         }
 
-        // Player's selection 
-        const playerSelection = prompt("Choice Rock, Paper or Scissors!");
+            
 
-        // Computer's selection
-        const computerSelection = getComputerChoice();
-   
+        
         game();
-        // console.log(playRound(playerSelection, computerSelection));
+
+        if(playerScore > computerScore){
+            console.log(" Player won. The score was " + playerScore + " - " +  computerScore);
+        } else {
+            console.log("Computer win. The score was " + playerScore + " - " +  computerScore);
+        }
 
    
     </script>
