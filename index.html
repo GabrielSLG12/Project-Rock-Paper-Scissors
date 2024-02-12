@@ -6,15 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button class="Paper">PAPER</button>
+    <button class="Rock">ROCK</button>
+    <button class="Scissors">SCISSORS</button>
+
+
+
+
     <script>
         // Player's selection
-        const playerPrompt = prompt("Choice Rock, Paper or Scissors!");
-        const playerSelection = playerPrompt.toUpperCase();
+        // const playerPrompt = prompt("Choice Rock, Paper or Scissors!");
+        // const playerSelection = playerPrompt.toUpperCase();
         // playerSelection playerPrompt
-        // Computer's selection
-        const computerSelection = getComputerChoice();
         
-
         // player score
         let playerScore = 0;
 
@@ -24,20 +29,60 @@
 
         function getComputerChoice(){
             const elements = ["ROCK", "PAPER", "SCISSORS"];
+            // const arrayElements = elements.map(toUpper);
             const choice = elements[Math.floor(Math.random() * elements.length)];
             return choice;
         }
 
         function playRound(playerSelection, computerSelection){
+
+            // switch(playerSelection) {
+            //     case "ROCK":
+            //         switch(computerSelection){
+            //             case "ROCK": return (playerSelection + " it's draw " + computerSelection);
+            //             break;
+            //             case "PAPER": return ("You lose! " + computerSelection + " beats " + playerSelection);
+            //                           computerScore++
+            //             break;
+            //             case "SCISSORS": return ("You win! " + playerSelection + " beats " +  computerSelection);
+            //                             playerScore++
+            //             break;
+            //         }
+            //     break
+            //     case "PAPER":
+            //         switch(computerSelection){
+            //             case "PAPER": return (playerSelection + " it's draw " + computerSelection);
+            //             break;
+            //             case "SCISSORS": return ("You lose! " + computerSelection + " beats " + playerSelection);
+            //             break;
+            //             case "ROCK": return ("You win! " + playerSelection + " beats " +  computerSelection);
+
+            //             break;
+            //         }
+            //     break  
+            //     case "SCISSORS":
+            //         switch(computerSelection){
+            //             case "SCISSORS": return (playerSelection + " it's draw " + computerSelection);
+            //             break;
+            //             case "ROCK": return ("You lose! " + computerSelection + " beats " + playerSelection);
+            //             break;
+            //             case "PAPER": return ("You win! " + playerSelection + " beats " +  computerSelection);
+            //             break;
+            //         }
+            //     break
+  
+            // }
             
             if (playerSelection === "ROCK" && computerSelection === "PAPER"   ||
                     playerSelection === "SCISSORS" && computerSelection === "ROCK" ||
                     playerSelection === "PAPER" && computerSelection === "SCISSORS"){
-                return ("You lose! " + computerSelection + " beats " + playerSelection + computerScore++)
+                    computerScore++
+                return ("You lose! " + computerSelection + " beats " + playerSelection);
             } else if(playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
                     playerSelection === "PAPER" && computerSelection === "ROCK" ||
-                    playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-                return ("You win! " + playerSelection + " beats " +  computerSelection + playerScore++)
+                    playerSelection === "SCISSORS" && computerSelection === "PAPER"){
+                    playerScore++
+                return ("You win! " + playerSelection + " beats " +  computerSelection);
             } else {
                 return (playerSelection + " it's draw " + computerSelection);
             }
@@ -46,32 +91,65 @@
 
         }
 
+        const paperBtn = document.querySelector(".Paper");
+        const rockBtn = document.querySelector(".Rock");
+        const scissorsBtn = document.querySelector(".Scissors");
+
+
+        paperBtn.addEventListener("click", function(){
+            const computerSelection = getComputerChoice();
+            playRound("PAPER", computerSelection);
+            game();
+
+
+        });
+
+        rockBtn.addEventListener("click", function(){
+            const computerSelection = getComputerChoice();
+            playRound("ROCK", computerSelection);
+            game();
+        });
+
+        scissorsBtn.addEventListener("click", function(){
+            const computerSelection = getComputerChoice();
+            playRound("SCISSORS", computerSelection);
+            game();
+        });
+
+
         function game(){
             
-            for (let game = 1; game < 6; game++){
+            // for (let game = 1; game < 6; game++){
 
-                const computerSelection = getComputerChoice();
-                console.log(playRound(playerSelection, computerSelection));
-                console.log(playerScore);
-                console.log(computerScore);
-                console.log(playerPrompt);
+            //     const computerSelection = getComputerChoice();
+            //     playRound(playerSelection, computerSelection);
+            //     console.log(playerScore);
+            //     console.log(computerScore);
+            //     // console.log(playerPrompt);
 
+            // }
+
+            // if(playerScore > computerScore){ 
+            // console.log(" Player won. The score was " + playerScore + " - " +  computerScore);
+            // } else if (playerScore < computerScore) {
+            // console.log("Computer win. The score was " + playerScore + " - " +  computerScore);
+            // } else {
+            //     console.log("it's draw");
+            // }
+
+            if(playerScore === 5){
+                console.log("Player Win");
+            }else if(computerScore === 5){
+                console.log("Computer Win");
             }
-                
-        }
 
-            
 
+        }   
         
-        game();
+        
 
-        if(playerScore > computerScore){
-            console.log(" Player won. The score was " + playerScore + " - " +  computerScore);
-        } else {
-            console.log("Computer win. The score was " + playerScore + " - " +  computerScore);
-        }
 
-   
+
     </script>
 </body>
 </html>

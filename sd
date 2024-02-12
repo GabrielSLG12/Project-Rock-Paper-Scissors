@@ -1,0 +1,29 @@
+[33mcommit 40a3e5b3ab1ca109f0aa199e2c6ccad5033ade86[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: Gabriel Sandulache <sandulache_gabriel@yahoo.com>
+Date:   Fri Jan 19 22:23:25 2024 +0200
+
+    add case insensitive for rock, paper and scissors
+
+[33mcommit ae71afafc876260f5ac5f4bb8398571335be663d[m
+Author: Gabriel Sandulache <sandulache_gabriel@yahoo.com>
+Date:   Wed Jan 17 22:14:22 2024 +0200
+
+    added a loop for the game() function
+
+[33mcommit 129781d541ebd9f1ef83e2fc721b9d9e24a17a7a[m
+Author: Gabriel Sandulache <sandulache_gabriel@yahoo.com>
+Date:   Tue Jan 16 21:46:52 2024 +0200
+
+    stuck on playRond
+
+[33mcommit cea0cde2ac25367f5fe996b157c4fbdb6ae4704e[m
+Author: Gabriel Sandulache <sandulache_gabriel@yahoo.com>
+Date:   Tue Jan 16 19:32:35 2024 +0200
+
+    add index.html
+
+[33mcommit 694071758e0713fdaf75a532146286219738cc19[m
+Author: Gabriel SANDULACHE <37276924+GabrielSLG12@users.noreply.github.com>
+Date:   Tue Jan 16 19:24:28 2024 +0200
+
+    Initial commit
